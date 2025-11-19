@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yubo Zhang, Ph.D. - 3D Genomics & R&D Scientist</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --border: #e9ecef;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        header {
+            margin-top: 60px;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .contact-bar {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .contact-bar a {
+            margin: 0 10px;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .btn-group {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1a252f;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h3.section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Experience & Education */
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--border);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-date {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .timeline-loc {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Publications */
+        .pub-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .pub-journal {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        /* Skills/Tags */
+        .tag {
+            display: inline-block;
+            background: var(--bg-light);
+            padding: 5px 10px;
+            margin: 0 5px 5px 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+
+        footer a {
+            color: white;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; }
+            .nav-links { margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Yubo Zhang, Ph.D.</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#publications">Publications</a>
+                <a href="#patents">Patents</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Yubo Zhang, Ph.D.</h1>
+        <h2>PacBio Lab Manager & R&D Scientist</h2>
+        <p>Expert in 3D Genomics, Transcriptional Regulation & AI-driven Biology</p>
+        
+        <div class="contact-bar">
+            <span>📍 Rockville, MD 20850</span> |
+            <a href="mailto:ribonchang@gmail.com">ribonchang@gmail.com</a> |
+            <span>📞 +1 (925)-523-1700</span>
+        </div>
+
+        <div class="btn-group">
+            <a href="https://scholar.google.com/citations?user=FVefUp0AAAAJ&hl=en" target="_blank" class="btn">Google Scholar</a>
+            <a href="https://www.linkedin.com/in/yubo-zhang-20918428/" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- About Section -->
+        <section id="about">
+            <h3 class="section-title">About Me</h3>
+            <p>
+                I am an experienced Research Scientist and Lab Manager specializing in 3D Genomics. My work focuses on developing cutting-edge 3D genomic technologies, constructing 3D gene transcription regulatory networks using AI, and investigating the role of non-coding DNA regulatory elements in cancer transcription.
+            </p>
+            <br>
+            <p>
+                I have published nearly 40 high-level academic papers in journals such as <strong>Nature, Nature Genetics, Nucleic Acids Research, and Nature Communications</strong>, with over 2,000 citations. My work on genome-wide promoter interactions has been highlighted by Faculty of 1000. I hold 14 patents (9 authorized) and have led multiple national-level research projects funded by the NSFC and National Key R&D Programs.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h3 class="section-title">Professional Experience</h3>
+            
+            <div class="timeline-item">
+                <span class="timeline-date">2024/04 - 2025/8</span>
+                <h4>PacBio Lab Manager & R&D Scientist</h4>
+                <span class="timeline-loc">Frederick National Laboratory for Cancer Research (FNLCR), USA</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">2016/10 - 2023/12</span>
+                <h4>Director of Sequencing Center & Principal Investigator</h4>
+                <span class="timeline-loc">Agricultural Genomics Institute at Shenzhen, Chinese Academy of Agricultural Sciences (CAAS)</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">2013/04 - 2016/05</span>
+                <h4>Research Fellow</h4>
+                <span class="timeline-loc">National Institutes of Health (NIH), USA</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">2011/01 - 2013/03</span>
+                <h4>Postdoctoral Fellow</h4>
+                <span class="timeline-loc">Lawrence Berkeley National Laboratory (LBL), USA</span>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">2008/01 - 2011/01</span>
+                <h4>Postdoctoral Fellow</h4>
+                <span class="timeline-loc">Genome Institute of Singapore (GIS)</span>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h3 class="section-title">Education</h3>
+            <div class="timeline-item">
+                <span class="timeline-date">2004 - 2007</span>
+                <h4>Ph.D. in Hydrobiology</h4>
+                <span class="timeline-loc">Chinese Academy of Sciences (CAS)</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">2001 - 2004</span>
+                <h4>M.Sc. in Animal Genetics and Breeding</h4>
+                <span class="timeline-loc">Huazhong Agricultural University</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">1996 - 2000</span>
+                <h4>B.Sc. in Animal Husbandry</h4>
+                <span class="timeline-loc">Huazhong Agricultural University</span>
+            </div>
+        </section>
+
+        <!-- Selected Publications -->
+        <section id="publications">
+            <h3 class="section-title">Selected Publications</h3>
+            <p style="margin-bottom: 20px; font-size: 0.9rem; color: #666;">*Selected from ~40 publications. See Google Scholar for full list.</p>
+
+            <div class="pub-item">
+                <div class="pub-title">Uncovering the whole genome silencers of human cells via Ss-STARR-seq</div>
+                <div class="pub-journal">Nature Communications (2025) | Corresponding Author</div>
+                <p>Zhu X, Huang L, ... Zhang Y.</p>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">MAE-seq refines regulatory elements across the genome</div>
+                <div class="pub-journal">Nucleic Acids Research (2024) | Corresponding Author</div>
+                <p>Zhu X, Huang Q, ... Zhang Y.</p>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Exonuclease combinations reduce noises in 3D genomics technologies</div>
+                <div class="pub-journal">Nucleic Acids Research (2020) | Corresponding Author</div>
+                <p>Kong S, Li Q, ... Zhang Y.</p>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Dynamic chromatin connectivity maps reveal lineage specific regulation</div>
+                <div class="pub-journal">Nature (2013) | Co-First Author</div>
+                <p>Zhang Y, Wong CH, Birnbaum R, ... Wei CL.</p>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">CTCF-mediated functional chromatin interactome in pluripotent cells</div>
+                <div class="pub-journal">Nature Genetics (2011)</div>
+                <p>Handoko L, ... Zhang Y, ... Wei CL.</p>
+            </div>
+        </section>
+
+        <!-- Patents Section -->
+        <section id="patents">
+            <h3 class="section-title">Selected Patents</h3>
+            <p>Total of 14 patents filed, 9 authorized.</p>
+            <br>
+            <ul>
+                <li><strong>CN111635930B (2023):</strong> Method for retrieving full-length sequences of unknown RNA by high-throughput sequencing.</li>
+                <li><strong>CN116286991B (2023):</strong> Whole-genome enhancer screening system, method, and application.</li>
+                <li><strong>CN112538493B (2021):</strong> Whole-genome silencer screening system and its application.</li>
+                <li><strong>CN107475394B (2021):</strong> eHi-C 2.0: High-resolution whole-genome chromatin conformation technology based on small cell numbers.</li>
+                <li><strong>CN112481262B (2022):</strong> Method for analyzing cell biological functions of enhancers based on CRISPR/Cas9 gene editing technology.</li>
+            </ul>
+        </section>
+
+        <!-- Honors & Grants -->
+        <section id="honors">
+            <h3 class="section-title">Honors & Projects</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h4>Awards</h4>
+                    <ul>
+                        <li>"Pengcheng Excellent Expert", Shenzhen Dapeng (2018)</li>
+                        <li>National "Thousand Talents Program" for Young Professionals (2017)</li>
+                        <li>"Pearl River Talent Plan" Leading Talent, Guangdong (2017)</li>
+                        <li>Distinguished Scientist Award, NIH-CSSA (2016)</li>
+                        <li>Special Award, Genome Institute of Singapore (2009, 2010)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Key Grants (Principal Investigator)</h4>
+                    <ul>
+                        <li><strong>National Key R&D Program:</strong> Mining of common regulatory elements for excellent traits in important agricultural animals/plants (2023-2028).</li>
+                        <li><strong>NSFC General Project:</strong> Study on Sox2 gene regulation in embryonic stem cells (2020-2023).</li>
+                        <li><strong>Shenzhen Sci-Tech Project:</strong> Genetic improvement and efficient breeding technology for Taxian Yak (2021-2023).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Footer -->
+        <section id="contact" style="background-color: #f5f7fa; padding: 40px; border-radius: 8px; text-align: center;">
+            <h2>Get in Touch</h2>
+            <p>I am open to academic collaborations and discussions on genomics and bioinformatics.</p>
+            <br>
+            <p><strong>Email:</strong> <a href="mailto:ribonchang@gmail.com">ribonchang@gmail.com</a></p>
+            <p><strong>Address:</strong> 1508 Aintree Drive, Rockville, MD 20850</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Yubo Zhang. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
